@@ -1,0 +1,38 @@
+# Ignorar arquivos de ambiente e segredos
+.env
+*.env
+
+# Ignorar pastas de cache e logs
+__pycache__/
+*.log
+
+# Ignorar arquivos de credenciais
+*.json
+
+
+# Ignorar ambientes virtuais
+.venv/
+venv/
+env/
+
+# Ignorar diretórios e arquivos gerados pelo sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar arquivos de dependências locais
+node_modules/
+*.lock
+
+# Ignorar arquivos temporários de áudio e vídeo
+*.wav
+*.mp4
+
+# Ignorar arquivos do Visual Studio Code
+.vscode/
+
+# Ignorar o repositório aninhado
+scripto.ai/.git
+
+# Ignorar outros arquivos
+*.pyc
+scripto.ai/.env
