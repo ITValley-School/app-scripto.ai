@@ -2,10 +2,10 @@
   👾
 </p>
 
-<h1 align="center">scripto.ai</h1>
+<h1 align="center">app-scripto.ai</h1>
 
 <p align="center">
-  <strong>scripto.ai</strong> é um aplicativo de transcrição inteligente de vídeos, utilizando tecnologias de inteligência artificial para oferecer transcrições rápidas e precisas.
+  <strong>app-scripto.ai</strong> é um aplicativo de transcrição inteligente de vídeos, utilizando tecnologias de inteligência artificial para oferecer transcrições rápidas e precisas.
 </p>
 
 <p align="center">
@@ -36,3 +36,10 @@ Instruções sobre como contribuir para o projeto, incluindo comandos básicos d
 2. **Clone** o seu fork.
    ```bash
    git clone https://github.com/seu-usuario/app-scripto.ai.git
+
+
+   📞 Contato
+Para mais informações, sugestões ou dúvidas, contate os mantenedores do projeto através deste link de contato.
+
+📄 Licença
+© IT Valley School. Todos os direitos reservados. Este projeto e todos os materiais associados são propriedade exclusiva da IT Valley School. A reprodução, distribuição ou uso deste código e de seus componentes associados são estritamente proibidos, exceto conforme permitido sob os termos da Licença IT Valley School. Para mais detalhes sobre a licença, consulte o arquivo LICENSE.md.
