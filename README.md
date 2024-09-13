@@ -36,7 +36,6 @@ Instruções sobre como contribuir para o projeto, incluindo comandos básicos d
 2. **Clone** o seu fork.
    ```bash
    git clone https://github.com/seu-usuario/app-scripto.ai.git
- 
 
 📞 Contato
 
