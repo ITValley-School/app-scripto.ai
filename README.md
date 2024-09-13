@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="attachment://An_artistic_and_modern_logo_for_a_tech_project_nam.png" width="400" alt="Logo do scripto.ai">
+  👾
 </p>
 
 <h1 align="center">scripto.ai</h1>
