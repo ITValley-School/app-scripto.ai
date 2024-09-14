@@ -196,7 +196,7 @@ if video_url:
         st.write(f"**Processing Time:** {processing_time:.2f} seconds")  # Tempo de processamento da transcrição
 
         st.markdown("<h3>Transcript</h3>", unsafe_allow_html=True)
-        st.text_area(label="", value=formatted_transcript, height=300, key="transcript_area")
+        st.text_area(label="*", value=formatted_transcript, height=300, key="transcript_area")
 
         # Botão para download da transcrição
         st.download_button(

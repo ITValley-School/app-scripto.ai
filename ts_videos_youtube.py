@@ -24,14 +24,19 @@ embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
 def get_video_metadata(video_url: str):
     """Extrai metadados do vídeo do YouTube usando pytube."""
     yt = YouTube(video_url)
+    
+    # Verifica se publish_date está disponível, caso contrário define um valor padrão
+    publish_date = yt.publish_date.strftime('%Y-%m-%d') if yt.publish_date else "Data indisponível"
+    
     video_info = {
         "title": yt.title,
         "channel": yt.author,
         "duration": yt.length // 60,  # Duração em minutos
-        "publish_date": yt.publish_date.strftime('%Y-%m-%d'),
+        "publish_date": publish_date,  # Usa a data formatada ou uma mensagem padrão
         "thumbnail_url": yt.thumbnail_url  # Adiciona a URL da thumbnail
     }
     return video_info
+
 
 def create_vector_from_yt_url(video_url: str) -> FAISS:
     """Cria uma base de vetores FAISS a partir da URL do vídeo do YouTube."""
