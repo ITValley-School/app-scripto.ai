@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_option('server.folderWatch', False)
+st.set_option('server.watchContent', False)
 
 import back_scripto_youtube as lch  # Importando o módulo para funções do back-end
 from datetime import datetime
