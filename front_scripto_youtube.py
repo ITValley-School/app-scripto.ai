@@ -1,5 +1,5 @@
 import streamlit as st
-import ts_videos_youtube as lch  # Importando o módulo para funções do back-end
+import back_scripto_youtube as lch  # Importando o módulo para funções do back-end
 from datetime import datetime
 import time
 from fpdf import FPDF
@@ -174,8 +174,15 @@ if video_url:
         else:
             st.warning("Thumbnail not available")
 
-        # Convertendo a data de publicação para o formato dd-mm-aaaa
-        publish_date = datetime.strptime(video_info['publish_date'], "%Y-%m-%d").strftime("%d-%m-%Y")
+        # Verificando a data de publicação e formatando apenas se ela estiver disponível
+        if video_info['publish_date'] != "Data indisponível":
+            try:
+                publish_date = datetime.strptime(video_info['publish_date'], "%Y-%m-%d").strftime("%d-%m-%Y")
+            except ValueError as e:
+                st.warning(f"Erro ao processar a data de publicação: {e}")
+                publish_date = "Data indisponível"
+        else:
+            publish_date = "Data indisponível"
         
         st.markdown(f"<div class='transcription-status'>Transcribing '{video_info['title']}' from channel '{video_info['channel']}'...</div>", unsafe_allow_html=True)
 
