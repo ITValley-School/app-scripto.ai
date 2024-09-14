@@ -6,11 +6,17 @@ from dotenv import load_dotenv
 import os
 from pytube import YouTube
 
-# Carrega as variáveis de ambiente
+# Carrega as variáveis de ambiente do arquivo .env
 load_dotenv()
 
 # Obtém a chave da API do OpenAI a partir do arquivo .env
 openai_api_key = os.getenv("OPENAI_API_KEY")
+
+# Verifica se a chave API foi carregada corretamente
+if not openai_api_key:
+    raise ValueError("A chave da API do OpenAI não foi encontrada. Verifique se o arquivo .env está configurado corretamente.")
+else:
+    print(f"Chave API OpenAI: {openai_api_key}")  # Verifique a saída no console (remover em produção)
 
 # Configura as embeddings do OpenAI usando a chave API
 embeddings = OpenAIEmbeddings(openai_api_key=openai_api_key)
@@ -42,3 +48,13 @@ def format_transcript(transcript):
     """Formata a transcrição com quebras de linha e estrutura."""
     formatted_text = "\n".join([t.page_content for t in transcript])
     return formatted_text
+
+if __name__ == '__main__':
+    # Exemplo de uso (você pode alterar conforme necessário)
+    video_url = "https://www.youtube.com/watch?v=exemplo"
+    metadata = get_video_metadata(video_url)
+    print(f"Metadados do vídeo: {metadata}")
+    
+    db, transcript = create_vector_from_yt_url(video_url)
+    formatted_transcript = format_transcript(transcript)
+    print(formatted_transcript)
