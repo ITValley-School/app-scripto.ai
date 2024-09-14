@@ -61,14 +61,16 @@ def create_vector_from_yt_url(video_url: str) -> FAISS:
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
         docs = text_splitter.split_documents(transcript)
         print(f"Documentos divididos: {docs}")  # Verifique o conteúdo dos documentos divididos
+        print(f"Quantidade de documentos: {len(docs)}")
     except Exception as e:
         raise ValueError(f"Erro ao dividir o texto da transcrição: {e}")
 
-    try:
-        # Debug para verificar docs e embeddings antes de criar FAISS
-        print(f"Documentos: {docs}")
-        print(f"Quantidade de documentos: {len(docs)}")
+    # Verifica se a lista de documentos não está vazia
+    if not docs:
+        raise ValueError("A lista de documentos está vazia. Não é possível criar a base de vetores FAISS.")
 
+    try:
+        print(f"Embeddings: {embeddings}")
         db = FAISS.from_documents(docs, embeddings)
         print(f"Base de vetores FAISS criada com sucesso.")
     except Exception as e:
@@ -76,7 +78,6 @@ def create_vector_from_yt_url(video_url: str) -> FAISS:
         raise ValueError(f"Erro ao criar a base de vetores FAISS: {e}")
 
     return db, transcript
-
 
 
 def format_transcript(transcript):
