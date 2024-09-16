@@ -1,5 +1,4 @@
 import streamlit as st
-
 import back_scripto_youtube as lch  # Importando o módulo para funções do back-end
 from datetime import datetime
 import time
@@ -81,7 +80,7 @@ st.markdown(
     /* Botões */
     .stButton button {
         background: linear-gradient(90deg, #8A2BE2, #6A5ACD) !important;
-        color: #FFFFFF !important;
+        color: #808080 !important;  /* Texto cinza */
         border-radius: 8px;
         border: none;
         padding: 10px 20px;
@@ -90,8 +89,25 @@ st.markdown(
 
     .stButton button:hover {
         background-color: #4B0082 !important;
-        color: #FFFFFF !important;
+        color: #000000 !important;
     }
+
+    /* Estilo do botão de submissão no formulário com base no data-testid */
+    [data-testid="stFormSubmitButton"] button {
+        background: linear-gradient(90deg, #8A2BE2, #6A5ACD) !important;  /* Fundo gradiente */
+        color: #808080 !important;  /* Texto cinza */
+        border-radius: 8px;
+        border: none;
+        padding: 10px 20px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Estilo do botão quando em hover */
+    [data-testid="stFormSubmitButton"] button:hover {
+        background-color: #4B0082 !important;  /* Fundo roxo escuro no hover */
+        color: #000000 !important;  /* Texto preto no hover */
+    }
+
     
     /* Cabeçalhos de seção */
     h3 {
